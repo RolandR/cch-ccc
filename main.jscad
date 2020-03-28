@@ -1,11 +1,20 @@
 
+/*
+
+	This is an openjscad file.
+	You can compile it to an stl or other 3d file at openjscad.org
+	
+	CC0 2019 by draemmli (Roland Rytz)
+
+*/
+
 
 function main(){
-	var biggerRadius = 30;
-	var thickness = 5;
+	var biggerRadius = 30; // radius of the outer letter "C"
+	var thickness = 5; // line width (also sets gap between inner and outer "C")
 	var height = 10;
 	var smallerRadius = biggerRadius - 2*thickness;
-	var fn = 100;
+	var fn = 100; // curve resolution
 	var offset = biggerRadius + smallerRadius + 2*thickness;
 	
 	var biggerCylinder = cylinder({r: biggerRadius, h: height, fn: fn});
@@ -50,8 +59,6 @@ function main(){
 		 smallerCylinder
 		,smallStraightConnection.translate([thickness, 0, 0])
 	);
-	
-	//return part;
 	
 	part = union(
 		 c
